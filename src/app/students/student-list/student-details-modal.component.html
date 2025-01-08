@@ -1,0 +1,16 @@
+<div class="modal-header bg-primary text-white py-3">
+    <h4 class="modal-title fw-bold">Student Details</h4>
+</div>
+<div class="modal-body bg-light p-4 rounded">
+    <h5 class="text-primary border-bottom pb-2 mb-3">Student Information</h5>
+    <p><strong>First Name:</strong> <span class="text-muted">{{ studentDetails.firstName }}</span></p>
+    <p><strong>Last Name:</strong> <span class="text-muted">{{ studentDetails.lastName }}</span></p>
+    <p><strong>Email:</strong> <span class="text-muted">{{ studentDetails.email }}</span></p>
+
+    <h5 class="text-primary border-bottom pb-2 mb-3 mt-4">Address Information</h5>
+    <p><strong>Street:</strong> <span class="text-muted">{{ addressDetails.street }}</span></p>
+    <p><strong>City:</strong> <span class="text-muted">{{ addressDetails.city }}</span></p>
+</div>
+<div class="modal-footer bg-secondary py-3 d-flex justify-content-end">
+    <button type="button" class="btn btn-light btn-sm px-4" (click)="activeModal.close()">Close</button>
+</div>

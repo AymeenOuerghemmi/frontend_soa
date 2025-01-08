@@ -1,0 +1,35 @@
+.modal-header {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-body {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body h5 {
+    font-size: 1.25rem;
+    color: #0056b3;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.modal-footer {
+    background: #343a40;
+    border-top: none;
+}
+
+.modal-footer .btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}

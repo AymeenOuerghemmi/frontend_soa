@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <h2>Student List</h2>
+    <button class="btn btn-primary mb-2" routerLink="/students/new">Add Student</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{ student.id }}</td>
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.email }}</td>
+                <td>
+                    <button (click)="viewDetails(student.id)" class="btn btn-info">Détails</button>
+                    <button class="btn btn-warning" [routerLink]="['/students/edit', student.id]">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modale pour afficher les détails de l'étudiant -->
+<div class="modal fade" id="studentDetailsModal" tabindex="-1" aria-labelledby="studentDetailsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentDetailsModalLabel">Student Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>ID:</strong> {{ studentDetails?.id }}</p>
+                <p><strong>Name:</strong> {{ studentDetails?.firstName }} {{ studentDetails?.lastName }}</p>
+                <p><strong>Email:</strong> {{ studentDetails?.email }}</p>
+
+                <p *ngIf="addressDetails">
+                    <strong>Address:</strong> {{ addressDetails?.street }} - {{ addressDetails?.city }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

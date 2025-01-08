@@ -1,0 +1,16 @@
+<h3 class="text-center mb-4">{{ isEditMode ? 'Edit Address' : 'Add Address' }}</h3>
+<form (ngSubmit)="saveAddress()" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="street" class="form-label">Street:</label>
+        <input id="street" [(ngModel)]="address.street" name="street" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="city" class="form-label">City:</label>
+        <input id="city" [(ngModel)]="address.city" name="city" class="form-control" required />
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg">{{ isEditMode ? 'Update' : 'Create' }}</button>
+    </div>
+</form>

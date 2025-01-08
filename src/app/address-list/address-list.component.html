@@ -1,0 +1,23 @@
+<h3 class="text-center mb-4">Address List</h3>
+<button (click)="addNewAddress()" class="btn btn-success mb-3">Add New Address</button>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let address of addresses">
+            <td>{{ address.id }}</td>
+            <td>{{ address.street }}</td>
+            <td>{{ address.city }}</td>
+            <td>
+                <button (click)="editAddress(address.id)" class="btn btn-warning btn-sm me-2">Edit</button>
+                <button (click)="deleteAddress(address.id)" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
